@@ -92,14 +92,17 @@ nav a {
 
 .section_4 .text {
   display: block;
+  position: relative;
+bottom: 20px;
 }
 
 .section_4 div.left{
   display: block;
   border-radius: 4px;
   background-color: #ff8c00a6;
-  padding: 10px 30px;
+  padding: 10px 20px;
   max-width: 300px;
+  max-height: 170;
 }
 
 .section_4 .left ul {
@@ -111,13 +114,9 @@ nav a {
 .section_4 div.right{
   display: block;
   border-radius: 4px;
-  padding: 10px;
   max-width: 300px;
 }
-  
-  /* Slide styles */
 
-  
 
   img {
     width: 100;
