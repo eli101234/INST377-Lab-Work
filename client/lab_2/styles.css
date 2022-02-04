@@ -120,7 +120,6 @@ nav a {
   
 
   img {
-    display: inline-block;
-    object-fit: scale-down;
+    width: 100;
   }
   
