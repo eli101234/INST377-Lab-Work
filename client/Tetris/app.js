@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // undraw the Tetra
   function undraw() {
-      current.forEach(index => {
-          squares[currentPosition + index].classList.remove('tetromino')
-      })
+    current.forEach(index => {
+      squares[currentPosition + index].classList.remove('tetromino');
+    })
   }
 });
