@@ -1,30 +1,32 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8'/>
-    <title>Some Web Page</title>
+    <title>Eli Hernandez Lab 5</title>
     <script src='script.js' charset='utf-8'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel='stylesheet' href='styles.css'/>
+    
   </head>
 
 
 <body>
     <div class="container">Prof A's Lab 5</div>
     <div class="columns">
-        <div class="left-box">
-            <p>First Name</p><br>
-            <input type="text">
-            <p>Food Preference</p>
-            <input type="text">
-            <fieldset>
-                
-                <legend>Veggie or Vegan?</legend>
-                <label>Yes</label>
-                <input type="radio">
-                <label>No</label>
-                <input type="radio">
+        <form action='https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json' method='get' class='left-box'>
+            <label for='first-name'><strong>First Name</strong></label>
+            <input type="text" id="first-name" name="first-name">
+            <label for='food-preference'><strong>Food Preference</strong></label>
+            <input type="text" id="food-preference" name="food-preference">
+            <fieldset class="Radio-Button">
+                <legend><strong>Veggie or Vegan?</strong></legend>
+                <label for="Yes" class="radio-label">Yes</label>
+                <input type="radio" name="veggieVegan" id="Yes">
+                <label for="NO" class="radio-label">No</label>
+                <input type="radio" name="veggieVegan" id="NO">
             </fieldset>
+            <button>Submit</button>
             
-        </div>
+        </form>
         <div class="right-box">
             This is going to be something in two weeks
         </div>

@@ -15,7 +15,8 @@ body {
 /* Page Layout */
 .columns {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction:inherit;
 }
 
 .wrapper {
@@ -34,13 +35,79 @@ body {
 
 .left-box {
   display: flex;
-  max-width: 960px;
+  padding: 10px;
+  justify-content:center;
+  flex-direction: column;
+  flex-wrap:wrap;
+  background-color: white;
   border-radius: 5px;
-  margin: 25px;
-  padding: 10;
-  background-color: #ffe089;
+  margin: auto;
+}
+.left-box input[type='text'] {
+  background-color: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 80%;
+  padding: 7px;
+  font-size: 14px;
+  height: 5%;
+  margin: 5px;
+}
+.left-box label {
+  margin: 5px;
+}
+.Radio-Button {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.Radio-Button legend {
+  padding: 5px;
+}
+
+.Radio-Button .radio-label {
+  display: block;
+  font-size: 14px;
+}
+
+.Radio-Button input[type='radio'] {
+  margin-top: 5px;
+}
+  
+.Radio-Button .radio-label,
+.Radio-Button input[type='radio'] {
+  float: left;
+}
+
+.left-box button {
+  font-size: 16px;
+  width: 50%;
+  color: #FFFFFF;
+  background-color: #49c78e;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px;
+  cursor: pointer;
+}
+
+.left-box button:hover {
+  background-color: #76AEED;
+}
+
+.left-box button:active {
+  background-color: #407FC7;
 }
 
 .right-box {
-
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 3px;
+  width: 50%;
 }
