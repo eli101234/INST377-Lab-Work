@@ -1,17 +1,22 @@
 // As the last step of your lab, hook this up to index.html
-
+def dataHandler(data);
 async function mainEvent() { // the async keyword means we can make API requests
-    const form = document.querySelector('.left-box'); // change this selector to match the id or classname of your actual form
-    form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
-      submitEvent.preventDefault(); // This prevents your page from refreshing!
-      console.log('form submission'); // this is substituting for a "breakpoint"
-      const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'); // This accesses some data from our API
-      const arrayFromJson = await results.json(); // This changes it into data we can use - an object
-      console.table(arrayFromJson); // this is called "dot notation"
-      // arrayFromJson.data - we're accessing a key called 'data' on the returned object
-      // it contains all 1,000 records we need
-    });
-  }
+  let mainForm = document.querySelector('.right-box') ;
+  let button = document.querySelector('.button');
+  const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'); 
+  const arrayFromJson = await results.json();
+  button.addEventListener("submit", e => {
+    button.style.disply = 'none';
+  });
+  const form = document.querySelector('.left-box');
+  if(0 > length.results) {
+  form.addEventListener('submit', async (submitEvent) => { 
+    submitEvent.preventDefault(); 
+    console.log('form submission'); 
+    console.table(arrayFromJson);
+    button.style.disply = 'none';
+  }); dataHandler();}
+}
   
-  // this actually runs first! It's calling the function above
-  document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
+// this actually runs first! It's calling the function above
+document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
