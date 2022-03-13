@@ -6,30 +6,41 @@ function getRandomIntInclusive(min, max) {
   );
 }
 
-function dataHandler(dataArray) {
-  console.log('fired dataHandler');
-  console.table(dataArray);
+function restoArrayMake(dataArray) {
   const range = [...Array(15).keys()];
-  range.forEach((item) => {
-    console.log('rangeitem', item);
+  const listItems = range.map((item, index) => {
+    const restNum = getRandomIntInclusive(0, dataArray.length - 1);
+    return dataArray[restNum];
+  });
+  return listItems;
+}
+
+function createHtmlList(collection) {
+  const targetList = document.querySelector('.resto-list');
+  targetList.innerHTML = '';
+  collection.forEach((item) => {
+    const {name} = item;
+    const displayName = name.toLowerCase();
+    const injectThisItem = `<li>${displayName}</li>`;
+    targetList.innerHTML += injectThisItem;
   });
 }
+
 async function mainEvent() {
-  console.log('script loaded');
   const form = document.querySelector('.left-box');
   const submit = document.querySelector('.submit-button');
   submit.style.display = 'none';
 
-  const results = await fetch('/api/foodServicesPG');
+  const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
   const arrayFromJson = await results.json();
-  if (arrayFromJson.data.length > 0) {
+  if (arrayFromJson.length > 0) {
+    submit.style.display = 'block';
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
-      console.log('form submission');
-      button.style.disply = 'block';
+      const restoArray = restoArrayMake(arrayFromJson);
+      createHtmlList(restoArray);
     });
   }
-  dataHandler(console.table(arrayFromJson));
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
