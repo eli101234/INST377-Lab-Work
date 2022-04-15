@@ -14,7 +14,7 @@
   }
   
 
-  #map {height: 180px;}
+  #map {height: 360px;}
   /* Page Layout */
   
   .wrapper {
@@ -36,7 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     margin: 35px;
   }
   
@@ -46,7 +46,6 @@
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
-    margin: auto;
   }
   .left-box input[type='text'] {
     background-color: #FFFFFF;
@@ -107,18 +106,26 @@
   
   .right-box {
     display: flex;
-    padding: 15px;
     flex-direction: column;
+  }
+  .right-box .mappers {
     background-color: white;
     border-radius: 4px;
-    margin: 20px;
-    height: fit-content;
+    padding: 15px;
+    margin-left: 10px;
   }
+  .right-box .resto_chango{
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
   .page_item_wide {
     flex-grow: 2;
-    width: 640px;
+    max-width: 640px;
   }
-  
   
   @media only screen and (max-width: 700px) {
   
