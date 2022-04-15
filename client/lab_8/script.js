@@ -60,13 +60,16 @@ async function mainEvent() {
   const map = initMap();
   const retrievalVar = 'restaurants';
   submit.style.display = 'none';
-  if (localStorage.getItem(retrievalVar) === undefined) {
+  if (localStorage.getItem(retrievalVar) === null) {
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const arrayFromJson = await results.json();
-    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
+    console.log(arrayFromJson);
+    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson));
+    // localStorage.clear()
   }
   const storedDataString = localStorage.getItem(retrievalVar);
   const storedDataArray = JSON.parse(storedDataString);
+  console.log(storedDataString);
   console.log(storedDataArray);
   // Helps make sure we do not a race condition on data load
   if (storedDataArray.length > 0) {
