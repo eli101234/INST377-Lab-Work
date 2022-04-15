@@ -1,0 +1,42 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Eli Hernandez Lab 8</title>
+    <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <link rel='stylesheet' href='styles.css'/>
+  </head>
+
+
+<body>
+    <div class="blank"></div>
+    <div class="container">Prof A's Lab 7</div>
+    <div class="columns">
+        <form method='get' class='left-box'>
+            <label for='resto_name'><strong>Restaurant Name</strong></label>
+            <input type="text" id="resto_name" name="resto_name">
+            <label for='zipcode'><strong>Zipcode</strong></label>
+            <input type="text" id="zipcode" name="zipcode">
+            <fieldset class="Radio-Button">
+                <legend><strong>Veggie or Vegan?</strong></legend>
+                <label for="Yes" class="radio-label">Yes</label>
+                <input type="radio" name="veggieVegan" id="Yes">
+                <label for="NO" class="radio-label">No</label>
+                <input type="radio" name="veggieVegan" id="NO">
+            </fieldset>
+            <button class="submit-button">Change Restaurant</button>
+            
+        </form>
+        <div class="right-box page_item_wide">
+            <div id="map"></div>
+            <h2>Restaurant List</h2>
+            <ul class="resto-list"></ul>
+        </div>
+    </div>
+    <script src='script.js' charset='utf-8'></script>
+</body> 
